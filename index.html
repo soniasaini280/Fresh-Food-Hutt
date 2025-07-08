@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile responsive view -->
+  <title> Fresh Food Hutt</title>
+  <!-- Link to External CSS File -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Fresh Food Hutt</h1>
+    <button id="theme-toggle">🌙</button>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <!-- Navigation Menu -->
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav> 
+  </header>
+
+  <!-- Hero Section -->
+  <section>
+    <h2>Welcome to the World of Tasty Food</h2>
+    <p>Order your favourite meal in seconds!</p>
+    <!-- Call to Action Button -->
+    <button onclick="alert('Thanks for your order!')">Order Now</button>
+  </section>
+
+  <!-- image slider -->
+   <section class="slider">
+    <div class="slides">
+      <div class="slide">
+        <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_960_720.jpg" alt="Pizza Slide">
+        <div class="caption">Delicious Pizza</div>
+      </div>
+      <div class="slide">
+        <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg" alt="Burger Slide">
+        <div class="caption">Juicy Burger</div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=1600&q=80" alt="Pasta Slide">
+        <div class="caption">Creamy Pasta</div>
+      </div>
+    </div>
+
+    <!-- dots -->
+     <div class="dots">
+      <span class="dot" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+     </div>
+
+     <!-- navigation button -->
+     <button class="slider-btn prev">&#10094</button>
+     <button class="slider-btn next">&#10095</button>
+   </section>
+
+  <!-- Menu Section -->
+  <section class="menu-section">
+    <h2>Our Specials</h2>
+    <ul class="menu-list">
+      <li class="menu-item">
+        <img src="images/pizza.jpg" alt="Pizza">
+        <p>Cheese Pizza</p>
+      </li>
+      <li class="menu-item">
+        <img src="images/potato_top.webp" alt="Potato Top">
+        <p>Potato Top</p>
+      </li>
+      <li class="menu-item">
+        <img src="images/mince.jpeg" alt="Mince">
+        <p>Mince</p>
+      </li>
+      <li class="menu-item">
+        <img src="images/mince_and_chesse.webp" alt="Mince and Chesse">
+        <p>Mince and Chesse</p>
+      </li>
+    </ul>
+  </section>
+
+  <!--contact section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="return sendmessage()">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Food Hutt. All rights reserved.</p>
+  </footer>
+
+  <button id="scrollTopBtn" title="Go to top">&#8657</button>
+
+  <script src="script.js"></script>
+</body>
+</html> 
+

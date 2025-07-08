@@ -1,0 +1,486 @@
+/* 1. css variables*/
+:root {
+  --primary-color:#95283c;
+  --secondary-color: #223e1e;
+  --accent-color: #e04a36;
+  --bg-light: #fffaf5;
+  --bg-dark: #121212;
+  --text-color: #294123;
+  --text-light: #fff;
+}
+
+/* 2. reset defaults*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+
+/* 3. body styling*/
+body {
+    font-family: 'poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 4. header styling */
+header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 5. Hero Section */
+section:nth-of-type(1) {
+  background: url('https://source.unsplash.com/1600x500/?food') no-repeat center center/cover;
+  padding: 60px 20px;
+  color: rgb(38, 71, 38);
+  text-align: center;
+}
+
+section:nth-of-type(1) h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+section:nth-of-type(1) button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: var(--text-light);
+  color: #ff6347;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 6. Menu Section */
+section:nth-of-type(2) {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+section:nth-of-type(2) h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+section:nth-of-type(2) ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+section:nth-of-type(2) li {
+  background-color: var(--text-light);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 10px;
+  width: 200px;
+  border-radius: 8px;
+}
+
+section:nth-of-type(2) img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* hover effects */
+button:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: scale(1.05);
+}
+
+section:nth-of-type(2) li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  section:nth-of-type(2) ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section:nth-of-type(2) li {
+    width: 90%;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* responsive layout */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  section:nth-of-type(2) ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section:nth-of-type(2) li {
+    width: 90%;
+  }
+}
+
+/* contact form */
+#contact {
+  background-color: #f8f8f8;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+ #contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+#contact form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contact input,
+#contact textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'poppins', sans-serif;
+}
+
+#contact button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#contact button:hover {
+  background-color: var(--accent-color);
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.dark-mode body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.dark-mode section,
+.dark-mode #contact,
+.dark-mode .menu-toggle {
+  background-color: #1e1e1e;
+  color: var(--text-light);
+}
+
+.dark-mode nav ul {
+  background-color: #1f1f1f;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size:24px;
+  padding: 10px;
+  border:none;
+  border-radius: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+
+#scrollTopBtn:hover {
+  background-color: var(--accent-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*hamburger menu toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  font-size: 28px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* mobile view navigation */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction:column;
+    display: none;
+    background-color: var(--secondary-color);
+    padding:20px;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    z-index: 1000;
+  }
+}
+
+/* slider styling */
+.slider {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  transition: transform 0.6s ease;
+}
+
+.slides img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+
+.slider-container {
+  position: relative;
+  max-width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  flex-shrink: 0;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.slider-btn.prev {
+  left: 10px;
+}
+
+.slider-btn.next {
+  right: 10px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  margin-top: 20px auto;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%;
+}
+
+.slide {
+  min-width:100%;
+  height: 400px;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px black;
+}
+
+.dots {
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .slide {
+    height: 250px;
+  }
+}
+
+.menu-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--bg-light);
+}
+
+.menu-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: varr(--primary-color);   
+}
+
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  background-color: var(--text-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 200px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item p {
+  margin-top: 10px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .menu-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-item {
+    width: 90%;
+  }
+}
